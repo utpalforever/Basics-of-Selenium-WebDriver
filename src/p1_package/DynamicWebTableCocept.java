@@ -13,17 +13,59 @@ public class DynamicWebTableCocept {
 		System.setProperty("webdriver.chrome.driver",
 				"E:\\Shiv@1008\\SeleniumBackEnd\\chromedriver_win32\\chromedriver.exe");
 
-		WebDriver driver1 = new ChromeDriver();
+		WebDriver driver = new ChromeDriver();
 
-		driver1.manage().window().maximize();
-		driver1.manage().deleteAllCookies();
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
 
-		driver1.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
-		driver1.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().pageLoadTimeout(40, TimeUnit.SECONDS);
+		driver.manage().timeouts().implicitlyWait(40, TimeUnit.SECONDS);
 
-		driver1.get("https://freecrm.com/");
+		driver.get("https://freecrm.com/");
 		
-		driver1.findElement(By.xpath("//a[@class='btn btn-primary btn-xs-2 btn-shadow btn-rect btn-icon btn-icon-left']")).click();
+		driver.findElement(By.xpath("//a[contains(@class, 'btn btn-primary btn-xs-2 btn-shadow')]")).click();
+		driver.findElement(By.name("email")).sendKeys("utpalforever@gmail.com");
+		driver.findElement(By.name("password")).sendKeys("test@123");
+		driver.findElement(By.xpath("//div[text()='Login']")).click();
+		driver.findElement(By.xpath("//span[text()='Contacts']")).click();
+		driver.navigate().refresh();
+		String beforePath="//*[@id=\"ui\"]/div/div[2]/div[2]/div/div[2]/table/tbody/tr[";
+		String afterPath="]/td[2]";
+		
+		for(int i=1; i<=5;i++) {
+			String xpath=beforePath+i+afterPath;
+			String textName=driver.findElement(By.xpath(xpath)).getText();
+			
+			if(textName.contains("utpal shivam")) {
+				driver.findElement(By.xpath(xpath)).click();
+				
+			}
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 

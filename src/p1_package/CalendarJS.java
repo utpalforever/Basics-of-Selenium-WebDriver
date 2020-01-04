@@ -10,6 +10,13 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class CalendarJS {
 
+	public static void dateSelectJS(WebDriver driver, WebElement element, String dateVal) {
+
+		JavascriptExecutor js = ((JavascriptExecutor) driver);
+		js.executeScript("arguments[0].setAttribute('value','" + dateVal + "');", element);
+
+	}
+	
 	public static void main(String[] args) {
 
 		System.setProperty("webdriver.chrome.driver",
@@ -33,11 +40,6 @@ public class CalendarJS {
 
 	}
 
-	public static void dateSelectJS(WebDriver driver, WebElement element, String dateVal) {
-
-		JavascriptExecutor js = ((JavascriptExecutor) driver);
-		js.executeScript("arguments[0].setAttribute('value','" + dateVal + "');", element);
-
-	}
+	
 
 }

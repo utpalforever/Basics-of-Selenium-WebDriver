@@ -34,9 +34,20 @@ public class ScreenShotConcept {
 		
 		//Store the screenshot at the location using copyFile() //below line should work according to the video
 		
-	 FileUtils.copyFile(src, new File("E:\\Shiv@1008\\SeleniumBackEnd\\scrn.png"));
+	 FileUtils.copyFile(src, new File("E:\\Shiv@1008\\SeleniumBackEnd\\scrnShot.png"));
 		
 
 	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

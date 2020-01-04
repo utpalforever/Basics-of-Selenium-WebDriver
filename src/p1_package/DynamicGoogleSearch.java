@@ -34,6 +34,7 @@ public class DynamicGoogleSearch {
 
 		List<WebElement> li = driver1
 				.findElements(By.xpath("//ul[@role='listbox']//li/descendant::div[@class='sbl1']"));
+		//.findElements(By.xpath("//ul[@role='listbox']//li/div[@class='sbl1']"));
 		
 		// single slash or double slash will work ONLY.
 		System.out.println(li.size());

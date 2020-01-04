@@ -77,18 +77,7 @@ public class BrokenLinksConcept {
 			connection.disconnect();
 			System.out.println(activelinks.get(j).getAttribute("href"+"   "+response));
 
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
-			
+	
 			
 		}
 
